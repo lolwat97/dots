@@ -1,6 +1,22 @@
 [bar/mybar]
-modules-right = date
+override-redirect = true
+wm-restack = i3
+
+width = 20%
+height = 32
+offset-x = 16
+offset-y = 8
+
+radius = 16
+line-size = 0 
+
+fixed-center = true
+modules-right = time date
 
 [module/date]
 type = internal/date
-date = %Y-%m-%d%
+date = %d.%m
+
+[module/time]
+type = internal/date
+date = %H:%M:%S
