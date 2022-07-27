@@ -101,8 +101,8 @@ bindsym $mod+Shift+f floating toggle
 bindsym $mod+Shift+t focus mode_toggle
 bindsym $mod+t layout toggle tabbed splith splitv
 
-bindsym $mod+r mode "Resize Mode"
-mode "Resize Mode" {
+bindsym $mod+r mode "R"
+mode "R" {
         bindsym Left resize shrink width 5 px or 5 ppt
         bindsym Down resize grow height 5 px or 5 ppt
         bindsym Up resize shrink height 5 px or 5 ppt
