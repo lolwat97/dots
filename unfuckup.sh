@@ -7,3 +7,4 @@ cp $SCRIPT_DIR/polybar/config.ini $HOME/.config/polybar/
 cp $SCRIPT_DIR/polybar/launch.sh $HOME/.config/polybar/ 
 cp $SCRIPT_DIR/picom/config $HOME/.config/picom/ 
 
+i3 restart
