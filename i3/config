@@ -150,6 +150,7 @@ default_border pixel 0
 # Autostart #
 #############
 
+exec --no-startup-id xrdb $HOME/.Xresources
 exec --no-startup-id /usr/bin/rofication-daemon
 exec --no-startup-id /usr/bin/nm-applet
 exec --no-startup-id picom -b --config $HOME/.config/picom/config 

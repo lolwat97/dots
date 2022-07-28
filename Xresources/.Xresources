@@ -1,0 +1,45 @@
+xterm*faceName: Iosevka
+xterm*faceSize: 12
+xterm*scrollBar: false
+xterm*scrollTtyOutput: false
+xterm*vt100.translations: #override \n\
+ Shift <Key>Home: scroll-forw(10000000000) \n\
+ Shift <Key>End: scroll-back(10000000000)
+
+! special
+*.foreground:   #fffbf7
+*.background:   #1f1f24
+*.cursorColor:  #fffbf7
+
+! black
+*.color0:       #1f1f24
+*.color8:       #36363e
+
+! red
+*.color1:       #6383A9
+*.color9:       #6fa8ed
+
+! green
+*.color2:       #5D7696
+*.color10:      #6997d2
+
+! yellow
+*.color3:       #7088B4
+*.color11:      #7eabfc
+
+! blue
+*.color4:       #5077B1
+*.color12:      #5797f6
+
+! magenta
+*.color5:       #9497B1
+*.color13:      #abb3fb
+
+! cyan
+*.color6:       #7793C1
+*.color14:      #86baff
+
+! white
+*.color7:       #ded5d2
+*.color15:      #fffbf7
+
