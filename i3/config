@@ -12,9 +12,6 @@ bindsym $mod+$alt+q [con_id="__focused__"] exec --no-startup-id kill -9 $(xdotoo
 
 bindsym $mod+Return exec --no-startup-id /usr/bin/x-terminal-emulator
 bindsym $mod+Shift+Return exec --no-startup-id gtk-launch $(xdg-settings get default-web-browser)
-bindsym $mod+space exec --no-startup-id rofi -show drun
-bindsym $mod+Shift+space exec --no-startup-id rofi -show run
-bindsym $mod+Ctrl+space exec --no-startup-id rofi -show window
 
 bindsym $mod+Left focus left
 bindsym $mod+Down focus down
@@ -119,6 +116,15 @@ mode "R" {
 }
 
 floating_modifier $mod
+
+
+#################
+# Rofi keybinds #
+#################
+
+bindsym $mod+space exec --no-startup-id $HOME/.config/rofi/launchers/colorful/launcher.sh drun 7
+bindsym $mod+Shift+space exec --no-startup-id $HOME/.config/rofi/launchers/colorful/launcher.sh run 7
+bindsym $mod+Ctrl+space exec --no-startup-id $HOME/.config/rofi/launchers/colorful/launcher.sh window 7
 
 
 #############
