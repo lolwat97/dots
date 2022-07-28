@@ -7,6 +7,7 @@ temporary readme to remember what I've installed
 - rofi
 - polybar (compiled from repo) (additional deps)
 
+- flatcolor GTK theme
 - rofi themes (included)
 - Iosevka nerdfont (downloaded from github release, installed to system)
 - wpgtk (downloaded from repo / installed / linked basefiles)
