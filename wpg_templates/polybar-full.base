@@ -1,0 +1,278 @@
+#wpgtk-ignore
+[colors]
+fg = {color7}
+bg = {color0}
+activefg = {color15}
+activebg = {color8}
+urgentfg = {color15}
+urgentbg = {color9}
+lowbg = {color4}
+nominalbg = {color0}
+highbg = {color1}
+criticalbg = {color9}
+
+[fonts]
+textfont = "Iosevka:size=12:style=Bold Italic;3" 
+iconfont = "Iosevka:size=16;4" 
+
+[bar/bartype]
+override-redirect = true
+wm-restack = i3
+height = 32
+offset-y = 8
+radius = 16
+line-size = 0 
+foreground = ${{colors.fg}}
+background = ${{colors.bg}}
+font-0 = ${{fonts.textfont}}
+font-1 = ${{fonts.iconfont}}
+module-margin = 1
+
+[bar/i3bar]
+inherit = bar/bartype
+width = 10%
+offset-x = 16
+modules-center = i3-workspaces
+modules-left = i3-mode
+
+[bar/centerbar]
+inherit = bar/bartype
+width = 15%
+offset-x = 20%:+16
+modules-center = temperature cpuload memory battery
+module-margin = 0
+
+[bar/traybar]
+inherit = bar/bartype
+width = 14%
+offset-x = 86%:-16
+modules-center = layout tray time date 
+
+
+[module/date]
+type = internal/date
+date = %d.%m
+
+[module/time]
+type = internal/date
+date = %H:%M:%S
+
+[module/i3-workspaces]
+type = internal/i3
+show-urgent = true
+enable-scroll = false
+format = <label-state>
+
+label-focused = %index%
+label-focused-foreground = ${{colors.activefg}}
+label-focused-background = ${{colors.activebg}}
+label-focused-padding = 1
+
+label-unfocused = %index%
+label-unfocused-foreground = ${{colors.fg}}
+label-unfocused-background = ${{colors.bg}}
+label-unfocused-padding = 1
+
+label-visible = %index%
+label-visible-foreground = ${{colors.fg}}
+label-visible-background = ${{colors.bg}}
+label-visible-padding = 1
+
+label-urgent = %index%
+label-urgent-foreground = ${{colors.urgentfg}}
+label-urgent-background = ${{colors.urgentbg}}
+label-urgent-padding = 1
+
+[module/i3-mode]
+type = internal/i3
+show-urgent = false
+enable-scroll = false
+format = <label-mode>
+label-mode-foreground = ${{colors.urgentfg}}
+label-mode-background = ${{colors.urgentbg}}
+label-mode-padding = 1
+
+[module/tray]
+type = internal/tray
+format = <tray>
+
+[module/cpuload]
+type = internal/cpu
+interval = 0.5
+format = <ramp-load><ramp-coreload>
+
+ramp-load-margin = 0
+ramp-load-padding = 1
+ramp-load-font = 2
+ramp-load-0 = 
+ramp-load-0-foreground = ${{colors.fg}}
+ramp-load-0-background = ${{colors.lowbg}}
+ramp-load-1 =  
+ramp-load-1-foreground = ${{colors.fg}}
+ramp-load-1-background = ${{colors.nominalbg}}
+ramp-load-2 =  
+ramp-load-2-foreground = ${{colors.fg}}
+ramp-load-2-background = ${{colors.nominalbg}}
+ramp-load-3 =  
+ramp-load-3-foreground = ${{colors.fg}}
+ramp-load-3-background = ${{colors.nominalbg}}
+ramp-load-4 =  
+ramp-load-4-foreground = ${{colors.activefg}}
+ramp-load-4-background = ${{colors.highbg}}
+ramp-load-5 =  
+ramp-load-5-foreground = ${{colors.activefg}}
+ramp-load-5-background = ${{colors.highbg}}
+ramp-load-6 =  
+ramp-load-6-foreground = ${{colors.activefg}}
+ramp-load-6-background = ${{colors.highbg}}
+ramp-load-7 =  
+ramp-load-7-foreground = ${{colors.urgentfg}}
+ramp-load-7-background = ${{colors.criticalbg}}
+
+ramp-coreload-margin = 0
+ramp-coreload-padding = 1
+ramp-coreload-spacing = 0
+ramp-coreload-0 = ▁
+ramp-coreload-0-foreground = ${{colors.fg}}
+ramp-coreload-0-background = ${{colors.lowbg}}
+ramp-coreload-1 = ▂
+ramp-coreload-1-foreground = ${{colors.fg}}
+ramp-coreload-1-background = ${{colors.nominalbg}}
+ramp-coreload-2 = ▃
+ramp-coreload-2-foreground = ${{colors.fg}}
+ramp-coreload-2-background = ${{colors.nominalbg}}
+ramp-coreload-3 = ▄
+ramp-coreload-3-foreground = ${{colors.fg}}
+ramp-coreload-3-background = ${{colors.nominalbg}}
+ramp-coreload-4 = ▅
+ramp-coreload-4-foreground = ${{colors.activefg}}
+ramp-coreload-4-background = ${{colors.highbg}}
+ramp-coreload-5 = ▆
+ramp-coreload-5-foreground = ${{colors.activefg}}
+ramp-coreload-5-background = ${{colors.highbg}}
+ramp-coreload-6 = ▇
+ramp-coreload-6-foreground = ${{colors.activefg}}
+ramp-coreload-6-background = ${{colors.highbg}}
+ramp-coreload-7 = █
+ramp-coreload-7-foreground = ${{colors.urgentfg}}
+ramp-coreload-7-background = ${{colors.criticalbg}}
+
+[module/battery]
+type = internal/battery
+full-at = 100
+low-at = 20
+battery = BAT0
+adapter = AC
+poll-interval = 30
+
+format-charging = <label-charging><animation-charging>
+format-discharging = <label-discharging>
+format-low = <label-low>
+
+label-charging =%{{T2}} %{{T-}}%percentage_raw%%
+label-charging-foreground = ${{colors.fg}}
+label-charging-background = ${{colors.lowbg}}
+label-charging-margins = 0
+label-charging-padding = 1
+
+label-discharging =%{{T2}} %{{T-}}%percentage_raw%%
+label-discharging-foreground = ${{colors.fg}}
+label-discharging-background = ${{colors.bg}}
+label-discharging-margins = 0
+label-discharging-padding = 1
+
+label-low =%{{T2}} %{{T-}}%percentage_raw%%
+label-low-foreground = ${{colors.urgentfg}}
+label-low-background = ${{colors.criticalbg}}
+label-low-margins = 0
+label-low-padding = 1
+
+animation-charging-0 = C
+animation-charging-1 = 
+animation-charging-framerate = 2000
+
+[module/volume]
+type = internal/pulseaudio
+use-ui-max = true
+interval = 3
+
+[module/backlight]
+type = internal/backlight
+card = amdgpu_bl0
+enable-scroll = true
+
+[module/memory]
+type = internal/memory
+interval = 5
+warn-percentage = 85
+format = <ramp-used>
+format-warn = <ramp-used><label-warn>
+
+label-warn-margin = 0
+label-warn-padding = 1
+label-warn = %free%
+label-warn-foreground = ${{colors.urgentfg}}
+label-warn-background = ${{colors.criticalbg}}
+
+ramp-used-margin = 0
+ramp-used-padding = 1
+ramp-used-0 = %{{T2}} %{{T-}}⠀
+ramp-used-1 = %{{T2}} %{{T-}}▂
+ramp-used-2 = %{{T2}} %{{T-}}▄
+ramp-used-3 = %{{T2}} %{{T-}}▆
+ramp-used-4 = %{{T2}} %{{T-}}█
+ramp-used-0-foreground = ${{colors.fg}}
+ramp-used-1-foreground = ${{colors.fg}}
+ramp-used-2-foreground = ${{colors.fg}}
+ramp-used-3-foreground = ${{colors.activefg}}
+ramp-used-4-foreground = ${{colors.urgentfg}}
+ramp-used-0-background = ${{colors.lowbg}}
+ramp-used-1-background = ${{colors.lowbg}}
+ramp-used-2-background = ${{colors.nominalbg}}
+ramp-used-3-background = ${{colors.highbg}}
+ramp-used-4-background = ${{colors.criticalbg}}
+
+[module/filesystem]
+type = internal/fs
+mount-0 = /
+mount-1 = /home
+interval=30
+
+[module/wifi]
+type = internal/network
+interface = wlp3s0
+
+[module/temperature]
+type = internal/temperature
+interval = 0.5
+hwmon-path = /sys/devices/pci0000:00/0000:00:18.3/hwmon/hwmon4/temp1_input
+base-temperature=35
+warn-temperature=65
+format = <ramp>
+format-warn = <ramp><label-warn>
+
+label-warn = %temperature-c%
+label-warn-foreground = ${{colors.urgentfg}}
+label-warn-background = ${{colors.criticalbg}}
+label-warn-margin = 0
+label-warn-padding = 1
+
+ramp-margin = 0
+ramp-padding = 1
+ramp-font = 2
+ramp-0 = 
+ramp-1 = 
+ramp-2 = 
+ramp-3 = 
+ramp-1-weight = 3
+ramp-0-background = ${{colors.lowbg}}
+ramp-1-background = ${{colors.nominalbg}}
+ramp-2-background = ${{colors.highbg}}
+ramp-3-background = ${{colors.criticalbg}}
+ramp-0-foreground = ${{colors.fg}}
+ramp-1-foreground = ${{colors.fg}}
+ramp-2-foreground = ${{colors.activefg}}
+ramp-3-foreground = ${{colors.urgentfg}}
+
+[module/layout]
+type = internal/xkeyboard
