@@ -8,3 +8,4 @@ cp $HOME/.config/polybar/launch.sh $SCRIPT_DIR/polybar/
 cp $HOME/.config/picom/config $SCRIPT_DIR/picom/
 cp $HOME/.Xresources $SCRIPT_DIR/Xresources/
 
+cp $HOME/.config/wpg/templates/* $SCRIPT_DIR/wpg_templates/
