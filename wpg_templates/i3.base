@@ -146,7 +146,7 @@ focus_follows_mouse yes
 gaps inner 16
 gaps outer 0
 # Fit my polybar
-gaps top 32
+gaps top 24
 
 default_floating_border pixel 0
 default_border pixel 0

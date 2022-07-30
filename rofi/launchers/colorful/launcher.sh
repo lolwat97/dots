@@ -17,9 +17,9 @@ dir="$HOME/.config/rofi/launchers/colorful"
 
 # dark
 ALPHA="#00000000"
-BG="#292922"
-FG="#cec9c5"
-SELECT="#0E0E0C"
+BG="#224146"
+FG="#b9cac2"
+SELECT="#122225"
 
 # light
 #ALPHA="#00000000"
@@ -28,7 +28,7 @@ SELECT="#0E0E0C"
 #SELECT="#f3f3f3ff"
 
 # accent color
-ACCENT="#674e77"
+ACCENT="#3e9497"
 
 # overwrite colors file
 cat > $dir/colors.rasi <<- EOF
