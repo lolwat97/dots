@@ -17,3 +17,7 @@ what else:
 - gsettings set org.gnome.gnome-flashback status-notifier-watcher false (https://github.com/i3-gnome/i3-gnome/issues/59)
 - something for the layout
 
+also:
+
+- https://github.com/FilipLitwora/pywal-discord
+- https://github.com/guillaumeboehm/wal-telegram
