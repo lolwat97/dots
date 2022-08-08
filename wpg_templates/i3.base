@@ -148,6 +148,19 @@ gaps outer 0
 # Fit my polybar
 gaps top 24
 
+font pango:Iosevka Italic 10
+set_from_resource $fg i3wm.color7 #f0f0f0
+set_from_resource $bg i3wm.color2 #f0f0f0
+set_from_resource $bga i3wm.color10 #f0f0f0
+set_from_resource $fga i3wm.color15 #f0f0f0
+client.focused          $bga     $bga     $fga  $bga       $bga
+client.focused_inactive $bg     $bg     $fg  $bg       $bg
+client.unfocused        $bg     $bg     $fg  $bg       $bg
+client.urgent           $bg     $bg     $fg  $bg       $bg
+client.placeholder      $bg     $bg     $fg  $bg       $bg
+
+client.background       $bg
+
 default_floating_border pixel 0
 default_border pixel 0
 
@@ -156,10 +169,11 @@ default_border pixel 0
 # Autostart #
 #############
 
+exec --no-startup-id wal -R
 exec --no-startup-id xrdb $HOME/.Xresources
-exec --no-startup-id /usr/bin/rofication-daemon
 exec --no-startup-id /usr/bin/nm-applet
-exec --no-startup-id picom -b --config $HOME/.config/picom/config 
+exec --no-startup-id /usr/bin/rofication-daemon
+exec_always --no-startup-id picom -b --config $HOME/.config/picom/config 
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 
