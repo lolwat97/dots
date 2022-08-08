@@ -149,7 +149,7 @@ gaps outer 0
 # Fit my polybar
 gaps top 32
 
-font pango:Iosevka Italic 12
+font pango:Iosevka Bold Italic 12
 #set_from_resource $fg i3wm.color7 #f0f0f0
 #set_from_resource $bg i3wm.color2 #f0f0f0
 #set_from_resource $bga i3wm.color10 #f0f0f0

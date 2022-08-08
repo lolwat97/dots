@@ -7,39 +7,39 @@ xterm*vt100.translations: #override \n\
  Shift <Key>End: scroll-back(10000000000)
 
 ! special
-*.foreground:   #fffffc
-*.background:   #292729
-*.cursorColor:  #fffffc
+*.foreground:   #fffbf8
+*.background:   #181319
+*.cursorColor:  #fffbf8
 
 ! black
-*.color0:       #292729
-*.color8:       #423f42
+*.color0:       #181319
+*.color8:       #332835
 
 ! red
-*.color1:       #FBD8C9
-*.color9:       #ffe9c9
+*.color1:       #897C88
+*.color9:       #c290bf
 
 ! green
-*.color2:       #A3DDEA
-*.color10:      #b7ffff
+*.color2:       #D6C2B8
+*.color10:      #fff0d2
 
 ! yellow
-*.color3:       #F6C8B8
-*.color11:      #ffe0c0
+*.color3:       #CDAE9F
+*.color11:      #ffd9b7
 
 ! blue
-*.color4:       #B0D3F5
-*.color12:      #bbffff
+*.color4:       #D3C9CE
+*.color12:      #ffdfff
 
 ! magenta
-*.color5:       #C3BFC1
-*.color13:      #ffdffa
+*.color5:       #A89B9E
+*.color13:      #efb4c2
 
 ! cyan
-*.color6:       #8FB2F4
-*.color14:      #a0dfff
+*.color6:       #B5B4C7
+*.color14:      #d5d1ff
 
 ! white
-*.color7:       #e8e6e3
-*.color15:      #fffffc
+*.color7:       #ece3e1
+*.color15:      #fffbf8
 
