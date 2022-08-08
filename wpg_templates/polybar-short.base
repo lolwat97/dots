@@ -43,8 +43,8 @@ module-margin = 0
 
 [bar/traybar]
 inherit = bar/bartype
-width = 15%
-offset-x = 85%:-16
+width = 18%
+offset-x = 82%:-16
 modules-center = layout tray time date 
 
 
