@@ -150,10 +150,14 @@ gaps outer 0
 gaps top 32
 
 font pango:Iosevka Italic 12
-set_from_resource $fg i3wm.color7 #f0f0f0
-set_from_resource $bg i3wm.color2 #f0f0f0
-set_from_resource $bga i3wm.color10 #f0f0f0
-set_from_resource $fga i3wm.color15 #f0f0f0
+#set_from_resource $fg i3wm.color7 #f0f0f0
+#set_from_resource $bg i3wm.color2 #f0f0f0
+#set_from_resource $bga i3wm.color10 #f0f0f0
+#set_from_resource $fga i3wm.color15 #f0f0f0
+set $fg		{color7}
+set $bg		{inactive}
+set $fga 	{color0}
+set $bga	{active}
 client.focused          $bga     $bga     $fga  $bga       $bga
 client.focused_inactive $bg     $bg     $fg  $bg       $bg
 client.unfocused        $bg     $bg     $fg  $bg       $bg
