@@ -12,6 +12,7 @@ bindsym $mod+$alt+q [con_id="__focused__"] exec --no-startup-id kill -9 $(xdotoo
 
 bindsym $mod+Return exec --no-startup-id /usr/bin/x-terminal-emulator
 bindsym $mod+Shift+Return exec --no-startup-id gtk-launch $(xdg-settings get default-web-browser)
+bindsym Print exec --no-startup-id maim -s | xclip -selection clipboard -t image/png
 
 bindsym $mod+Left focus left
 bindsym $mod+Down focus down
@@ -161,6 +162,23 @@ client.placeholder      $bg     $bg     $fg  $bg       $bg
 
 client.background       $bg
 
+font pango:Iosevka Bold Italic 12
+#set_from_resource $fg i3wm.color7 #f0f0f0
+#set_from_resource $bg i3wm.color2 #f0f0f0
+#set_from_resource $bga i3wm.color10 #f0f0f0
+#set_from_resource $fga i3wm.color15 #f0f0f0
+set $fg		#ece3e1
+set $bg		#4b444a
+set $fga 	#181319
+set $bga	#6d636c
+client.focused          $bga     $bga     $fga  $bga       $bga
+client.focused_inactive $bg     $bg     $fg  $bg       $bg
+client.unfocused        $bg     $bg     $fg  $bg       $bg
+client.urgent           $bg     $bg     $fg  $bg       $bg
+client.placeholder      $bg     $bg     $fg  $bg       $bg
+client.background $bg
+
+
 default_floating_border pixel 0
 default_border pixel 0
 
@@ -169,10 +187,11 @@ default_border pixel 0
 # Autostart #
 #############
 
+exec --no-startup-id wal -R
 exec --no-startup-id xrdb $HOME/.Xresources
 exec --no-startup-id /usr/bin/rofication-daemon
 exec --no-startup-id /usr/bin/nm-applet
-exec --no-startup-id picom -b --config $HOME/.config/picom/config 
+exec_always --no-startup-id picom -b --config $HOME/.config/picom/config 
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 

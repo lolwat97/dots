@@ -1,11 +1,11 @@
 [colors]
 fg = {color7}
 bg = {color0}
-activefg = {color15}
+activefg = {color0}
 activebg = {active}
-urgentfg = {color15}
+urgentfg = {color0}
 urgentbg = {color9}
-lowbg = {color4}
+lowbg = ${{colors.bg}}
 nominalbg = ${{colors.bg}}
 highbg = ${{colors.activebg}}
 criticalbg = ${{colors.urgentbg}}
@@ -26,28 +26,28 @@ foreground = ${{colors.fg}}
 background = ${{colors.bg}}
 font-0 = ${{fonts.textfont}}
 font-1 = ${{fonts.iconfont}}
+module-margin = 1
 
 [bar/i3bar]
 inherit = bar/bartype
-width = 10%
+width = 13%
 offset-x = 16
+fixed-center = true
 modules-center = i3-workspaces
 modules-left = i3-mode
-module-margin = 0
 
 [bar/centerbar]
 inherit = bar/bartype
-width = 10%
-offset-x = 43%
+width = 16%
+offset-x = 42%
 modules-center = temperature cpuload memory battery
 module-margin = 0
 
 [bar/traybar]
 inherit = bar/bartype
-width = 15%
-offset-x = 85%:-16
-modules-center = layout tray time date 
-module-margin = 1
+width = 21%
+offset-x = 79%:-16
+modules-center = layout tray date time  
 
 
 [module/date]
@@ -103,30 +103,30 @@ interval = 0.5
 format = <ramp-load>
 
 ramp-load-margin = 0
-ramp-load-padding = 0
+ramp-load-padding = 1
 ramp-load-font = 2
-ramp-load-0 = "  "
+ramp-load-0 = 
 ramp-load-0-foreground = ${{colors.fg}}
 ramp-load-0-background = ${{colors.lowbg}}
-ramp-load-1 = "  "
+ramp-load-1 =  
 ramp-load-1-foreground = ${{colors.fg}}
 ramp-load-1-background = ${{colors.nominalbg}}
-ramp-load-2 = "  "
+ramp-load-2 =  
 ramp-load-2-foreground = ${{colors.fg}}
 ramp-load-2-background = ${{colors.nominalbg}}
-ramp-load-3 = "  "
+ramp-load-3 =  
 ramp-load-3-foreground = ${{colors.fg}}
 ramp-load-3-background = ${{colors.nominalbg}}
-ramp-load-4 = "  "
+ramp-load-4 =  
 ramp-load-4-foreground = ${{colors.activefg}}
 ramp-load-4-background = ${{colors.highbg}}
-ramp-load-5 = "  "
+ramp-load-5 =  
 ramp-load-5-foreground = ${{colors.activefg}}
 ramp-load-5-background = ${{colors.highbg}}
-ramp-load-6 = "  "
+ramp-load-6 =  
 ramp-load-6-foreground = ${{colors.activefg}}
 ramp-load-6-background = ${{colors.highbg}}
-ramp-load-7 = "  "
+ramp-load-7 =  
 ramp-load-7-foreground = ${{colors.urgentfg}}
 ramp-load-7-background = ${{colors.criticalbg}}
 
@@ -142,20 +142,20 @@ format-charging = <label-charging>
 format-discharging = <label-discharging>
 format-low = <label-low>
 
-label-charging =%{{T2}}  %{{T-}}%percentage_raw%%
+label-charging =%{{T2}} %{{T-}}%percentage_raw%%
 label-charging-foreground = ${{colors.fg}}
 label-charging-background = ${{colors.lowbg}}
 label-charging-margins = 0
 label-charging-padding = 1
 
-label-discharging =%{{T2}}  %{{T-}}%percentage_raw%%
+label-discharging =%{{T2}} %{{T-}}%percentage_raw%%
 label-discharging-foreground = ${{colors.fg}}
 label-discharging-background = ${{colors.bg}}
 label-discharging-margins = 0
 label-discharging-padding = 1
 
 label-low =%{{T2}} %{{T-}}%percentage_raw%%
-label-low-foreground = ${{ colors.urgentfg}}
+label-low-foreground = ${{colors.urgentfg}}
 label-low-background = ${{colors.criticalbg}}
 label-low-margins = 0
 label-low-padding = 1
@@ -178,13 +178,12 @@ format = <ramp-used>
 format-warn = <ramp-used>
 
 ramp-used-margin = 0
-ramp-used-padding = 0
-ramp-used-font = 2
-ramp-used-0 = "  "
-ramp-used-1 = "  "
-ramp-used-2 = "  "
-ramp-used-3 = "  "
-ramp-used-4 = "  "
+ramp-used-padding = 1
+ramp-used-0 = %{{T2}}%{{T-}}
+ramp-used-1 = %{{T2}}%{{T-}}
+ramp-used-2 = %{{T2}}%{{T-}}
+ramp-used-3 = %{{T2}}%{{T-}}
+ramp-used-4 = %{{T2}}%{{T-}}
 ramp-used-0-foreground = ${{colors.fg}}
 ramp-used-1-foreground = ${{colors.fg}}
 ramp-used-2-foreground = ${{colors.fg}}
@@ -216,12 +215,12 @@ format = <ramp>
 format-warn = <ramp>
 
 ramp-margin = 0
-ramp-padding = 0
+ramp-padding = 1
 ramp-font = 2
-ramp-0 = "  "
-ramp-1 = "  "
-ramp-2 = "  "
-ramp-3 = "  "
+ramp-0 = 
+ramp-1 = 
+ramp-2 = 
+ramp-3 = 
 ramp-1-weight = 3
 ramp-0-background = ${{colors.lowbg}}
 ramp-1-background = ${{colors.nominalbg}}
