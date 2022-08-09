@@ -30,7 +30,7 @@ module-margin = 1
 
 [bar/i3bar]
 inherit = bar/bartype
-width = 13%
+width = 10%
 offset-x = 16
 fixed-center = true
 modules-center = i3-workspaces
@@ -38,15 +38,15 @@ modules-left = i3-mode
 
 [bar/centerbar]
 inherit = bar/bartype
-width = 16%
-offset-x = 42%
+width = 12%
+offset-x = 44%
 modules-center = temperature cpuload memory battery
 module-margin = 0
 
 [bar/traybar]
 inherit = bar/bartype
-width = 21%
-offset-x = 79%:-16
+width = 15%
+offset-x = 85%:-16
 modules-center = layout tray date time  
 
 

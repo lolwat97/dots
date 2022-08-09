@@ -147,7 +147,7 @@ focus_follows_mouse yes
 gaps inner 16
 gaps outer 0
 # Fit my polybar
-gaps top 32
+gaps top 24
 
 font pango:Iosevka Bold Italic 12
 #set_from_resource $fg i3wm.color7 #f0f0f0
